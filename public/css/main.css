@@ -71,6 +71,39 @@ button {
 	font-size: 1.6rem;
 }
 
+.tabbar {
+	display: flex;
+	justify-content: space-between;
+
+	overflow: hidden;
+	background-color: #FAFAFA;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+.tabbar .tabbar__item {
+	text-align: center;
+	padding: 1.6rem 2.5rem;
+	text-decoration: none;
+	font-size: 2.5rem;
+	display: flex;
+	align-items: center;
+}
+
+.tabbar .tabbar__item:hover {
+	background: #f1f1f1;
+	color: black;
+}
+
+.tabbar .tabbar__item--center {
+	background: linear-gradient(45deg, rgba(245,160,77,1) 0%, rgba(160,15,139,1) 100%);
+	color: white;
+	border-radius: 100%;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+
 /* Storie Style */
 
 .storie {
@@ -118,8 +151,57 @@ button {
 	width: 100%;
 }
 
-.user__thumb--new {
+/* Ajustes */
+
+.storie {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 10px;
+	overflow-x: auto;
+}
+
+.storie::-webkit-scrollbar {
+	display: none;
+}
+
+.storie__container {
+	align-items: center;
+	display: flex;
+	justify-content: flex-start;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.storie__item {
+	cursor: pointer;
+	width: 78px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-right: 7px;
+}
+
+.storie__item__label {
+	margin-top: 2px;
+	font-size: 10px;
+	color: #000;
+}
+
+.storie__item--new {
+	border-radius: 50%;
 	background: linear-gradient(45deg, rgba(245,160,77,1) 0%, rgba(160,15,139,1) 100%);
+	padding: 2px;
+}
+
+.storie__item__img {
+	display: flex;
+	width: 60px;
+	padding: 2px;
+	background: white;
+	border-radius: 100%;
+	overflow: hidden;
 }
 
 /* Feed Style */
@@ -227,16 +309,30 @@ button {
 	.container {
 		width: 728px;
 	}
-}
 
-@media screen and (min-width: 728px) {
 	.feed {
 		padding: 16px 0;
 	}
+	
+	.tabbar {
+		display: none;
+	}
 }
 
+@media screen and (max-width: 425px) {
+	.tabbar .tabbar__item {
+		text-align: center;
+		padding: 1.2rem 1.8rem;
+		text-decoration: none;
+		font-size: 1.8rem;
+	}
+}
 
-
-
-
-
+@media screen and (max-width: 320px) {
+	.tabbar .tabbar__item {
+		text-align: center;
+		padding: 1rem 1.5rem;
+		text-decoration: none;
+		font-size: 1.5rem;
+	}
+}
